@@ -207,7 +207,7 @@ app.delete('/api/employees/:id', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'dist')))
 
 // Catch-all: return index.html for any non-API route (React Router support)
-app.get('*', (req, res) => {
+app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
