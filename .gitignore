@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER commit secrets!)
+.env
+
+# Vite build output (can be regenerated with npm run build)
+# NOTE: dist/ IS committed here so the backend can serve it without a build step
+# Uncomment the line below only if you want to regenerate dist/ each deployment:
+# dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
