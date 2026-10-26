@@ -3,7 +3,9 @@
 > A complete Employee Management System built with **MongoDB · Express · React · Node.js**
 
 **GitHub Repository:** https://github.com/anlinjaison/employee__dashboard  
-**Hosted Application:** *(To be updated after deployment)*
+**Hosted Application:** *(Deploy to Render using steps below — see [Deployment](#deployment) section)*
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anlinjaison/employee__dashboard)
 
 ---
 
@@ -254,42 +256,40 @@ All endpoints are prefixed with `/api/employees`.
 
 ## Screenshots
 
-> Screenshots are saved in `docs/screenshots/`. See below for descriptions of each view.
+### 1. Dashboard — Employee List (with data)
+![Dashboard with employee data](docs/screenshots/01_dashboard.png)
 
-| View | File | Description |
-|------|------|-------------|
-| Dashboard (data loaded) | `docs/screenshots/01_dashboard.png` | Employee table with Edit/Delete actions |
-| Dashboard (empty state) | `docs/screenshots/02_empty_dashboard.png` | Empty state with Add Employee button |
-| Dashboard (error state) | `docs/screenshots/03_error_dashboard.png` | Error alert with Retry button |
-| Add Employee Form | `docs/screenshots/04_add_form.png` | Blank form with all 4 fields |
-| Form Validation | `docs/screenshots/05_form_validation.png` | Inline validation error messages |
-| Edit Employee Form | `docs/screenshots/06_edit_form.png` | Pre-filled form in edit mode |
-| Mobile Dashboard | `docs/screenshots/07_mobile_dashboard.png` | Mobile layout (375px) |
-| Mobile Form | `docs/screenshots/08_mobile_form.png` | Mobile form (375px) |
-| 404 Page | `docs/screenshots/09_404.png` | Not Found page |
+### 2. Dashboard — Empty State
+![Empty dashboard state](docs/screenshots/02_empty_dashboard.png)
 
-> ⚠️ **Screenshots are pending.** Browser automation was blocked by a network issue during development.
-> To capture screenshots manually:
-> 1. Run `node app.js` and `npm run dev` (two terminals)
-> 2. Open http://localhost:5173 in Chrome
-> 3. Press F12 → Device toolbar → set 375px for mobile
-> 4. Right-click → Inspect → Screenshot or use a browser extension
-> 5. Save to `docs/screenshots/` with the names above
+### 3. Add Employee Form
+![Add employee form](docs/screenshots/04_add_form.png)
+
+### 4. Form Validation Errors
+![Form validation errors](docs/screenshots/05_form_validation.png)
+
+### 5. Edit Employee Form (pre-filled)
+![Edit employee form](docs/screenshots/06_edit_form.png)
 
 ---
 
 ## Deployment
 
-### Option 1 — Express serves everything (Simplest)
+### Option 1 — Express serves everything (Simplest, Recommended)
 
-Deploy to **Render.com** — Express serves both the API and the compiled `dist/` frontend.
+This repo includes a `render.yaml` — deploy in one click:
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anlinjaison/employee__dashboard)
+
+**Manual steps:**
 1. Go to [render.com](https://render.com) → New → Web Service
 2. Connect GitHub repo: `anlinjaison/employee__dashboard`
 3. Build Command: `npm install`
 4. Start Command: `node app.js`
-5. Add env var: `MONGODB_URI` = your Atlas connection string
-6. Deploy → visit the Render URL
+5. Add environment variable: `MONGODB_URI` = your MongoDB Atlas connection string
+6. Click **Deploy** → wait ~2 min → visit your `https://<your-app>.onrender.com` URL
+
+> 💡 Once deployed, update line 6 of this README with your live Render URL!
 
 ### Option 2 — Separate Frontend + Backend
 
